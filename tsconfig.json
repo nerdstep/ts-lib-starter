@@ -1,0 +1,33 @@
+// https://www.typescriptlang.org/tsconfig
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "declarationDir": "dist/types",
+    //"typeRoots": ["node_modules/@types"],
+    "jsx": "react",
+    "newLine": "lf",
+    "declaration": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    //"esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "stripInternal": true,
+    "useDefineForClassFields": true
+  },
+  "include": ["src/**/*"]
+}

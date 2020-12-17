@@ -1,0 +1,11 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# directories
+coverage
+dist
+node_modules
+
+# misc
+.DS_Store
+.idea
+*.log*

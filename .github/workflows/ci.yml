@@ -1,0 +1,30 @@
+name: "CI"
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      - name: Install dependencies 📦
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+
+      - name: Run tests 🧪
+        run: npm run test:coverage
+        env:
+          CI: true
+
+      - name: Lint source code 🧹
+        run: npm run lint
+
+      - name: Build 🏗
+        run: npm run build
