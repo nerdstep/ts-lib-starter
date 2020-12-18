@@ -7,9 +7,12 @@
 
 ## Highlights
 
-- TypeScript
-- Jest
-- xo
+- [TypeScript](https://www.typescriptlang.org)
+- [Babel](https://babeljs.io)
+- [Microbundle](https://github.com/developit/microbundle)
+- [Jest](https://jestjs.io)
+- [Prettier](https://prettier.io)
+- [XO](https://github.com/xojs/xo)
 
 ## Install
 
@@ -25,7 +28,7 @@ import { hello } from '<package>'
 hello('world')
 ```
 
-## Contributors ✨
+## Contributors
 
 ## License
 
