@@ -107,7 +107,7 @@
       "/node_modules/"
     ],
     "transform": {
-      "^.+\\.ts$": "ts-jest"
+      "^.+\\.tsx?$": "ts-jest"
     }
   }
 }
