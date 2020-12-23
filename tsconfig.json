@@ -30,5 +30,10 @@
     "useDefineForClassFields": true
   },
   "include": ["src/**/*"],
-  "exclude": ["**/*.spec.ts", "**/__setup__/*", "**/__mocks__/*"]
+  "exclude": [
+    "**/__tests__/*",
+    "**/__setup__/*",
+    "**/__mocks__/*",
+    "**/*.spec.tsx?"
+  ]
 }
