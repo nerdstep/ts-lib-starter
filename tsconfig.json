@@ -29,5 +29,6 @@
     "stripInternal": true,
     "useDefineForClassFields": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts", "**/__setup__/*", "**/__mocks__/*"]
 }
