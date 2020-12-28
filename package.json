@@ -10,6 +10,7 @@
   "esmodule": "dist/index.modern.js",
   "source": "src/index.ts",
   "types": "dist/types/index.d.ts",
+  "browserslist": "> 0.25%, not dead",
   "author": {
     "name": "Justin Williams",
     "email": "justinwilliams42@gmail.com"
@@ -86,6 +87,7 @@
     ],
     "rules": {
       "capitalized-comments": 0,
+      "import/no-unassigned-import": 0,
       "unicorn/filename-case": 0
     }
   },
