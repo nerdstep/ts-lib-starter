@@ -26,5 +26,8 @@ jobs:
       - name: Lint source code 🧹
         run: npm run lint
 
+      - name: Type Check 🛠
+        run: npm ts:check
+
       - name: Build 🏗
         run: npm run build
