@@ -30,12 +30,13 @@
     "build": "node build.js && yarn ts:emit",
     "lint": "xo src",
     "lint:fix": "xo src --fix",
-    "test": "jest --no-cache",
+    "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --no-cache --coverage",
     "ts:check": "tsc --noEmit",
     "ts:emit": "tsc --emitDeclarationOnly --outDir dist",
-    "docs": "typedoc --out docs src/index.ts"
+    "docs": "typedoc --out docs src/index.ts",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
@@ -54,7 +55,9 @@
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "prettier --write",
-      "npm run lint:fix"
+      "yarn lint:fix",
+      "yarn ts:check",
+      "yarn test"
     ]
   },
   "husky": {
