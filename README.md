@@ -38,7 +38,26 @@ hello('world')
 
 ## Development
 
+Library development instructions.
+
+### Conventional Commits
+
+When commiting code changes the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification should be followed. This ensures, for example, that the CHANGELOG can be automatically generated.
+
+Commit Types:
+
+- `build:`
+- `chore:`
+- `ci:`
+- `docs:`
+- `style:`
+- `refactor:`
+- `perf:`
+- `test:`
+
 ### Scripts
+
+The available yarn/npm scripts.
 
 #### `yarn start`
 
@@ -71,6 +90,35 @@ Runs TypeScript type checking on the source code, but does not emit types.
 #### `yarn docs`
 
 Generates API documentation.
+
+## Publishing
+
+Release management is handled via [standard-version](https://github.com/conventional-changelog/standard-version), which should be installed globally:
+
+```shell
+yarn global add standard-version
+```
+
+To create a new release run:
+
+```shell
+yarn release
+```
+
+This will:
+
+- Increment the version in package.json
+- Generate the CHANGELOG
+- Create a new git release tag
+- Commit the changes to the local repo
+
+Note that this will not push the tags, to do so run:
+
+```shell
+yarn tag
+```
+
+You can also run the `release` command with the `--dry-run` flag to get the simulated output without committing to gut or updating files.
 
 ## Contributors
 

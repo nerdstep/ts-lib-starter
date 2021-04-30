@@ -36,7 +36,9 @@
     "ts:check": "tsc --noEmit",
     "ts:emit": "tsc --emitDeclarationOnly --outDir dist",
     "docs": "typedoc --out docs src/index.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "standard-version",
+    "tag": "git push --follow-tags origin master"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
