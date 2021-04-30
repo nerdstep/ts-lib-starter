@@ -68,6 +68,10 @@ Lints the source code.
 
 Runs TypeScript type checking on the source code, but does not emit types.
 
+#### `yarn docs`
+
+Generates API documentation.
+
 ## Contributors
 
 ## License
