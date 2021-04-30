@@ -1,7 +1,9 @@
 # directories
+.github
 .gitlab
 .vscode
 coverage
+docs
 /src/
 
 # files

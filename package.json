@@ -1,15 +1,12 @@
 {
   "name": "ts-lib-starter",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.2.0",
+  "description": "TypeScript library starter project",
   "license": "MIT",
   "repository": "nerdstep/ts-lib-starter",
-  "main": "dist/index.js",
-  "umd:main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
-  "esmodule": "dist/index.modern.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
+  "module": "dist/ts-lib-starter.js",
+  "types": "dist/types/index.d.ts",
   "author": {
     "name": "Justin Williams",
     "email": "justinwilliams42@gmail.com"
@@ -21,34 +18,38 @@
     "typescript",
     "library",
     "starter",
-    "boilerplate"
+    "boilerplate",
+    "esbuild",
+    "jest",
+    "xo",
+    "typedoc"
   ],
   "scripts": {
-    "start": "yarn test",
+    "start": "yarn esbuild --watch",
     "prebuild": "rimraf dist",
-    "build": "microbundle",
-    "build:dev": "yarn build -f es --no-compress",
+    "build": "node build.js && yarn ts:emit",
     "lint": "xo src",
     "lint:fix": "xo src --fix",
-    "test": "jest --watch",
+    "test": "jest --no-cache",
+    "test:watch": "jest --watch",
     "test:coverage": "jest --no-cache --coverage",
-    "typecheck": "tsc --noEmit"
+    "ts:check": "tsc --noEmit",
+    "ts:emit": "tsc --emitDeclarationOnly --outDir dist",
+    "docs": "typedoc --out docs src/index.ts"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-typescript": "^7.12.1",
-    "@types/jest": "^26.0.15",
-    "babel-jest": "^26.6.3",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.3.6",
+    "@types/jest": "^26.0.23",
+    "esbuild": "^0.11.16",
+    "esbuild-jest": "^0.5.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
-    "lint-staged": "^10.5.3",
-    "microbundle": "^0.12.4",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "ts-jest": "^26.4.3",
-    "typescript": "^4.1.3",
-    "xo": "^0.36.1"
+    "typedoc": "^0.20.36",
+    "typescript": "^4.2.4",
+    "xo": "^0.39.1"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
@@ -66,26 +67,31 @@
     "globals": [
       "describe",
       "expect",
-      "it"
+      "it",
+      "test"
     ],
     "rules": {}
   },
   "jest": {
     "bail": true,
     "verbose": false,
-    "globals": {
-      "ts-jest": {
-        "babelConfig": true
-      }
+    "transform": {
+      "^.+\\.tsx?$": "esbuild-jest"
     },
     "roots": [
       "<rootDir>/src/"
     ],
+    "setupFilesAfterEnv": [
+      "./src/__setup__/setup-tests.ts"
+    ],
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    }
+    "coveragePathIgnorePatterns": [
+      "/__helpers__/",
+      "/__mocks__/",
+      "/__setup__/",
+      "<rootDir>/src/types"
+    ]
   }
 }

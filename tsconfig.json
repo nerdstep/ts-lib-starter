@@ -10,11 +10,12 @@
     //"typeRoots": ["node_modules/@types"],
     "jsx": "react",
     "newLine": "lf",
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true,
     //"esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -29,5 +30,12 @@
     "stripInternal": true,
     "useDefineForClassFields": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": [
+    "**/__helpers__/*",
+    "**/__mocks__/*",
+    "**/__setup__/*",
+    "**/__tests__/*",
+    "**/*.spec.tsx?"
+  ]
 }
