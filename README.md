@@ -120,10 +120,12 @@ This will:
 - Create a new git release tag
 - Commit the changes to the local repo
 
-Note that this will not push the tags, to do so run:
+Next sync your changes with the remote repository.
+
+Then tag the release:
 
 ```shell
-yarn tag
+yarn release:tag
 ```
 
 You can also run the `release` command with the `--dry-run` flag to get the simulated output without committing to gut or updating files.
