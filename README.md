@@ -79,6 +79,14 @@ Launches the test runner in the interactive watch mode.
 
 Launches the test runner and generates a coverage report.
 
+#### `yarn format`
+
+Runs Prettier on the source code and fixes formatting.
+
+#### `yarn format:check`
+
+Runs Prettier on the source code but only checks formatting.
+
 #### `yarn lint`
 
 Lints the source code.
