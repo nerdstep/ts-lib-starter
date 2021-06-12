@@ -7,10 +7,12 @@ docs
 /src/
 
 # files
+*.log
 .babelrc
 .editorconfig
 .gitattributes
 .gitignore
 .gitlab-ci.yml
 .prettierrc.yml
+build.js
 tsconfig.json

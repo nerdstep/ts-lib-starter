@@ -7,6 +7,14 @@
     "source.fixAll.eslint": true,
     "source.organizeImports": true
   },
+  "files.associations": {
+    "[Dd]ockerfile*": "dockerfile",
+    "docker-compose*": "yaml",
+    "*.env*": "dotenv"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "[css]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -28,6 +36,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }

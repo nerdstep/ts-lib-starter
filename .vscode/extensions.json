@@ -1,8 +1,10 @@
 {
   "recommendations": [
-    "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "wix.vscode-import-cost"
   ],
   "unwantedRecommendations": []
 }
