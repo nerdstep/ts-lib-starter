@@ -40,7 +40,7 @@
     "docs": "typedoc --out docs src/index.ts",
     "prepare": "husky install",
     "release": "standard-version",
-    "tag": "git push --follow-tags origin master"
+    "release:tag": "git push --follow-tags origin master"
   },
   "peerDependencies": {},
   "dependencies": {},
