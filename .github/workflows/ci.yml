@@ -18,16 +18,19 @@ jobs:
         with:
           useLockFile: false
 
-      - name: Run tests 🧪
-        run: npm run test:coverage
-        env:
-          CI: true
+      - name: Format check 🔍
+        run: npm run format:check
 
       - name: Lint source code 🧹
         run: npm run lint
 
       - name: Type Check 🛠
         run: npm run ts:check
+
+      - name: Run tests 🧪
+        run: npm run test:coverage
+        env:
+          CI: true
 
       - name: Build 🏗
         run: npm run build
