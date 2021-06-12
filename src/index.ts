@@ -1,7 +1,2 @@
-export type Name = string
-
-function hello(name: Name) {
-  return `hello ${name}`
-}
-
-export { hello }
+export * from './hello'
+export * from './types'
