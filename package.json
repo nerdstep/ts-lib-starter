@@ -1,6 +1,6 @@
 {
   "name": "ts-lib-starter",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "TypeScript library starter project",
   "license": "MIT",
   "repository": "nerdstep/ts-lib-starter",
@@ -12,7 +12,7 @@
     "email": "justinwilliams42@gmail.com"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=12.20"
   },
   "keywords": [
     "typescript",
@@ -25,9 +25,11 @@
     "typedoc"
   ],
   "scripts": {
-    "start": "yarn esbuild --watch",
+    "start": "node build.js -debug -watch",
     "prebuild": "rimraf dist",
-    "build": "node build.js && yarn ts:emit",
+    "build": "node build.js --sourcemap",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
     "lint": "xo src",
     "lint:fix": "xo src --fix",
     "test": "jest",
@@ -40,24 +42,32 @@
     "release": "standard-version",
     "tag": "git push --follow-tags origin master"
   },
+  "peerDependencies": {},
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.0.1",
-    "esbuild": "^0.11.16",
+    "@types/node": "^15.12.2",
+    "esbuild": "0.12.7",
     "esbuild-jest": "^0.5.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-jest-dom": "^3.9.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "estrella": "^1.4.1",
     "husky": "^6.0.0",
-    "jest": "^26.6.3",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1",
+    "jest": "^27.0.4",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1",
     "rimraf": "^3.0.2",
     "typedoc": "^0.20.36",
-    "typescript": "^4.2.4",
-    "xo": "^0.39.1"
+    "typescript": "^4.3.2",
+    "xo": "^0.40.2"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "prettier --write",
+      "yarn format",
       "yarn lint:fix",
       "yarn ts:check",
       "yarn test"
@@ -85,6 +95,7 @@
   "jest": {
     "bail": true,
     "verbose": false,
+    "testEnvironment": "node",
     "transform": {
       "^.+\\.tsx?$": "esbuild-jest"
     },
@@ -97,11 +108,15 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
     "coveragePathIgnorePatterns": [
       "/__helpers__/",
       "/__mocks__/",
       "/__setup__/",
-      "<rootDir>/src/types"
+      "<rootDir>/src/types",
+      "<rootDir>/src/index.ts"
     ]
   }
 }
