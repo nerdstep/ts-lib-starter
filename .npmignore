@@ -7,12 +7,15 @@ docs
 /src/
 
 # files
-*.log
 .babelrc
 .editorconfig
+.eslintrc
 .gitattributes
 .gitignore
 .gitlab-ci.yml
 .prettierrc.yml
-build.js
-tsconfig.json
+.swcrc
+jest.config.js
+tsconfig.*
+tsup.config.ts
+*.log

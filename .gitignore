@@ -4,7 +4,11 @@
 coverage
 dist
 docs
+
+# dependencies
 node_modules
+.yarn
+.pnp.js
 
 # misc
 .DS_Store

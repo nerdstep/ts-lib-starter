@@ -11,7 +11,7 @@
 - Insanely fast builds with [esbuild](https://esbuild.github.io/)
 - Testing with [Jest](https://jestjs.io)
 - Code formatting with [Prettier](https://prettier.io)
-- Code linting with [XO](https://github.com/xojs/xo)
+- Code linting with [ESLint](https://eslint.org/)
 - API docs with [TypeDoc](https://typedoc.org/)
 
 ## Install
@@ -19,13 +19,13 @@
 With **npm**:
 
 ```shell
-$ npm install <package>
+npm install <package>
 ```
 
 With **yarn**:
 
 ```shell
-$ yarn add <package>
+yarn add <package>
 ```
 
 ## Usage
@@ -59,43 +59,43 @@ Commit Types:
 
 The available yarn/npm scripts.
 
-#### `yarn start`
+#### `start`
 
 Builds the library in `watch` mode, which will trigger a re-build on changes.
 
-#### `yarn build`
+#### `build`
 
 Builds the library for production.
 
-#### `yarn test`
+#### `test`
 
 Launches the test runner.
 
-#### `yarn test:watch`
+#### `test:watch`
 
 Launches the test runner in the interactive watch mode.
 
-#### `yarn test:coverage`
+#### `test:coverage`
 
 Launches the test runner and generates a coverage report.
 
-#### `yarn format`
+#### `format`
 
 Runs Prettier on the source code and fixes formatting.
 
-#### `yarn format:check`
+#### `format:check`
 
 Runs Prettier on the source code but only checks formatting.
 
-#### `yarn lint`
+#### `lint`
 
 Lints the source code.
 
-#### `yarn ts:check`
+#### `ts:check`
 
 Runs TypeScript type checking on the source code, but does not emit types.
 
-#### `yarn docs`
+#### `docs`
 
 Generates API documentation.
 
