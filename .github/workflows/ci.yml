@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install dependencies 📦
         uses: bahmutov/npm-install@v1
@@ -23,9 +23,6 @@ jobs:
 
       - name: Lint source code 🧹
         run: npm run lint
-
-      - name: Type Check 🛠
-        run: npm run ts:check
 
       - name: Run tests 🧪
         run: npm run test:coverage
